@@ -1,0 +1,82 @@
+.mainLogin{
+    width: 100%;
+    min-height: 100vh;
+}
+
+.registerBox{
+    display: flex;
+    flex-direction: column;
+    background: var(--grey-3);
+    width: 100%;
+    height: 44.3725rem;
+    padding: 15px;
+    gap: 30px;
+}
+
+.formBox{
+    display: flex;
+    flex-direction: column;
+    background: var(--grey-3);
+    gap: 2rem;
+}
+.select{
+    background: var(--grey-2);
+    color: var(--grey-0);
+    font-family: var(--font-primary);
+    font-size: 1.015rem;
+    line-height: 1.6494rem;
+    font-weight: 400;
+    color: var(--grey-1);
+    width: 100%;
+    height: 48px;
+    border-radius: 0.25rem;
+    border: 1px solid;
+    padding: 0 16px;
+    gap: 0.6344rem;
+    margin-top: 8px;
+}
+
+
+.header{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5rem 0.9375rem;
+    gap: 1rem;
+    border-bottom: 2px solid var(--grey-2);
+
+    @media (min-width: 700px) {
+        display: flex;
+        width: 100%;
+        height: 50px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 3rem 12rem;
+        gap: 1rem;
+        border-bottom: 2px solid var(--grey-2);
+        
+    }
+}
+
+.headFomr{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+   
+
+}
+
+.logo{
+    width: 150.59px;
+    height: 19.9px;
+}
+
+.buttonBox{
+    display: flex;
+    padding: 1rem 0;
+    width: 100%;
+}

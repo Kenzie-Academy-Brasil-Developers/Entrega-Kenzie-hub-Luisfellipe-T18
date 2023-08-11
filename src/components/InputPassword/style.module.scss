@@ -1,0 +1,34 @@
+ .inputPassword{
+       
+        font-family: var(--font-primary);
+        font-size: 1.015rem;
+        line-height: 1.6494rem;
+        font-weight: 400;
+        color: var(--grey-1);
+        width: 100%;
+        height: 48px;
+        border-radius: 0.25rem;
+        border: 1px solid;
+        padding: 0 16px;
+        gap: 0.6344rem;
+        margin-top: 8px;
+        background: var(--grey-2);
+
+        &:disabled{
+            opacity: .5;
+        }
+        
+    }
+    .inputGrid{ 
+        position: relative;
+
+    }
+    .button{
+        font-size: 1.0rem;
+        top: 1.4rem;
+        right: 10px;
+        position: absolute;
+        color: var(--grey-1);
+    }
+    
+
