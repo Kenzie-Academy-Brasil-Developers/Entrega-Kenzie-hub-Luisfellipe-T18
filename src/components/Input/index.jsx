@@ -9,7 +9,7 @@ export const Input = forwardRef(({ error, label, ...rest }, ref) => {
       <div>
         <label className="label">{label}</label>
         <input className={styles.input} ref={ref} {...rest} />
-        {error ? <p>{error.message}</p> : null}
+        {error ? <p className="headline">{error.message}</p> : null}
       </div>
     );
   });

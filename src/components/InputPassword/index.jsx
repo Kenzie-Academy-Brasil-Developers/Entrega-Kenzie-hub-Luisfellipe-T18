@@ -19,7 +19,7 @@ export const InputPassword = forwardRef(({ error, label, ...rest }, ref) => {
           {isHidden ? <MdVisibilityOff /> :  <MdVisibility />}
         </button>
       </div>
-      {error ? <p>{error.message}</p> : null}
+      {error ? <p className="headline">{error.message}</p> : null}
     </div>
   );
 });
