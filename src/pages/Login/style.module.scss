@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    background: var(--grey-2);
+    background: var(--grey-3);
     align-items: center;
     padding:  1rem;
 }
@@ -20,6 +20,7 @@
     height: 44.3725rem;
     padding: 15px;
     gap: 30px;
+    height: 100%;
 }
 
 .btn_register{
@@ -40,7 +41,7 @@
 
 
 .btn_register:hover{
-    background: var(--grey-3);
+    background: var(--grey-4);
 }
 
 .btn_primary{

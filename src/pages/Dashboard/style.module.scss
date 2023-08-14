@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 5rem 0.9375rem;
-    gap: 1rem;
+    
     border-bottom: 2px solid var(--grey-2);
 
     @media (min-width: 700px) {
@@ -26,6 +26,30 @@
 }
 .dashBox{
     display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 2rem;
+    width: 100%;
+    padding: 3rem 1rem;
+    border-bottom: 2px solid var(--grey-2);
+
+    @media (min-width: 700px) {
+        display: flex;
+        flex-direction: row;
+        
+        width: 100%;
+        justify-content: start;
+        padding: 3rem 12rem;
+        
+    }
+   
+}
+.paragraph {
+    color: var(--grey-0);
+}
+
+.dashContent{
+    display: flex;
     flex-direction: column;
     gap: 2rem;
     width: 100%;
@@ -35,6 +59,7 @@
     @media (min-width: 700px) {
         display: flex;
         flex-direction: column;
+        
         width: 100%;
         justify-content: space-between;
         padding: 3rem 12rem;

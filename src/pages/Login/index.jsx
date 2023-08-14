@@ -38,7 +38,7 @@ const [loading, setLoading] = useState(false)
       })
       
     } catch (error) {
-        toast.error(error.response?.data.message, {
+        toast.error("Não foi possível efectuar o login", {
          autoClose: 2000,
         })
       

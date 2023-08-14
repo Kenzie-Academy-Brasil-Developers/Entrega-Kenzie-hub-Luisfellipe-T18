@@ -6,7 +6,7 @@ import styles from "./style.module.scss";
 import { api } from "../../services/api";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerFormSchema } from "./registerFormSchema";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
@@ -21,15 +21,19 @@ export const Register = () => {
 
   const [loading, setLoading] = useState(false);
 
+  const navigate = useNavigate()
+
   const userRegister = async (formData) => {
     try {
       setLoading(true);
       await api.post("/users", formData);
       toast.success("Cadastro criado com sucesso", {
         autoClose: 2000,
+        
       })
-    } catch (error) {
-     toast.error(error.response?.data.message, {
+      navigate("/");
+    } catch  {
+     toast.error("Não foi possível efectuar o cadastro", {
         autoClose: 2000,
        })
     } finally {
@@ -76,7 +80,7 @@ export const Register = () => {
               />
 
               <InputPassword
-                error={errors.passoword}
+                error={errors.password}
                 label="Senha"
                 placeholder="Digite aqui sua senha"
                 {...register("password")}
@@ -136,6 +140,8 @@ export const Register = () => {
                   Sexto Módulo
                 </option>
               </select>
+              {errors.course_module ? <p className="headline">{errors.course_module.message}</p> : null}
+              
               <div className={styles.buttonBox}>
                 <button className="btn-primary-negative" disabled={loading}>
                   {loading ? "Cadastrando..." : "Cadastrar"}
