@@ -32,8 +32,7 @@
     color: var(--grey-0);
     background: var(--grey-1);
     font-family: var(--font-primary);
-    font-weight: 600;
-    font-size: 9.59px;
+    font-size: 15px;
     line-height: 22.73px;
     align-items: center;
     justify-content: center;
@@ -51,6 +50,10 @@
     padding: 0 1.375rem;
     color: var(--grey-0);
     background: var(--color-primary);
+    font-family: var(--font-primary);
+    font-size: 15px;
+    line-height: 22.73px;
+
 }
 
 .btn_primary:hover{

@@ -20,7 +20,7 @@ export const Dashboard = ({ user, userLogout }) => {
           </div>
           <div className={styles.dashContent}>
             <h2 className="title1">
-              Que pena! EstdashBoxamos em desenvolvimento :(
+              Que pena! Estamos em desenvolvimento :(
             </h2>
             <p className={styles.paragraph}>
               Nossa aplicação está em desenvolvimento, em breve teremos
