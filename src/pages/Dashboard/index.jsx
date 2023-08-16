@@ -1,7 +1,12 @@
 import styles from "./style.module.scss";
 import Logo from "../../assets/Logo.svg";
+import { useContext } from "react";
+import { UserContext } from "../../providers/UserContext";
 
-export const Dashboard = ({ user, userLogout }) => {
+export const Dashboard = () => {
+
+  const {user, userLogout } = useContext(UserContext)
+
   return (
     <>
       <header className={styles.header}>

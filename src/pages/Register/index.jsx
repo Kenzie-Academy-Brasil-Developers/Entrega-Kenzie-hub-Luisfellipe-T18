@@ -3,12 +3,11 @@ import { useForm } from "react-hook-form";
 import { Input } from "../../components/Input";
 import { InputPassword } from "../../components/InputPassword";
 import styles from "./style.module.scss";
-import { api } from "../../services/api";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerFormSchema } from "./registerFormSchema";
-import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { UserContext } from "../../providers/UserContext";
 
 export const Register = () => {
   const {
@@ -21,28 +20,10 @@ export const Register = () => {
 
   const [loading, setLoading] = useState(false);
 
-  const navigate = useNavigate()
-
-  const userRegister = async (formData) => {
-    try {
-      setLoading(true);
-      await api.post("/users", formData);
-      toast.success("Cadastro criado com sucesso", {
-        autoClose: 2000,
-        
-      })
-      navigate("/");
-    } catch  {
-     toast.error("Não foi possível efectuar o cadastro", {
-        autoClose: 2000,
-       })
-    } finally {
-      setLoading(false);
-    }
-  };
+  const { userRegister } = useContext(UserContext);
 
   const submit = (formData) => {
-    userRegister(formData);
+    userRegister(formData, setLoading);
   };
 
   return (
@@ -140,8 +121,10 @@ export const Register = () => {
                   Sexto Módulo
                 </option>
               </select>
-              {errors.course_module ? <p className="headline">{errors.course_module.message}</p> : null}
-              
+              {errors.course_module ? (
+                <p className="headline">{errors.course_module.message}</p>
+              ) : null}
+
               <div className={styles.buttonBox}>
                 <button className="btn-primary-negative" disabled={loading}>
                   {loading ? "Cadastrando..." : "Cadastrar"}

@@ -2,54 +2,30 @@ import { Header } from "../../components/Header";
 import { useForm } from "react-hook-form";
 import { Input } from "../../components/Input";
 import { InputPassword } from "../../components/InputPassword";
-import { Link, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginFormSchema } from "./loginFormSchema";
 import styles from "./style.module.scss";
-import { useState } from "react";
-import { api } from "../../services/api";
-import { toast } from "react-toastify";
+import { useContext, useState } from "react";
+import { UserContext, UserProvider } from "../../providers/UserContext";
 
 
-export const Login = ({setUser}) => {
+export const Login = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm({
     resolver: zodResolver(loginFormSchema),
   });
 
-
-
-const navigate = useNavigate()
-
 const [loading, setLoading] = useState(false)
 
-  const userLogin = async(formData) => {
-    try {
-      setLoading(true)
-      const { data } = await api.post("/sessions", formData)
-      setUser(data.user)
-      localStorage.setItem("@TOKEN", data.token)
-      navigate("/dashboard")
-      toast.success("Login realizado com sucesso", {
-        autoClose: 2000,
-      })
-      
-    } catch (error) {
-        toast.error("Não foi possível efectuar o login", {
-         autoClose: 2000,
-        })
-      
-    } finally {
-      setLoading(false)
-    }
-  }
+const { userLogin } = useContext(UserContext)
 
- 
   const submit = (formData) => {
-    userLogin(formData);
+    userLogin(formData, setLoading, reset);
   };
   return (
     <div className="container">
@@ -75,7 +51,7 @@ const [loading, setLoading] = useState(false)
             </div>
             <div className={styles.buttons}>
               <button className={styles.btn_primary} type="submit">
-                Entrar
+                {loading ? "Logando..." : "Entrar"}
               </button>
               <p>Ainda não posssui uma conta?</p>
               <Link className={styles.btn_register} to="/register">
