@@ -15,6 +15,7 @@ export const UserProvider = ({ children }) => {
   const pathname = window.location.pathname;
   
 
+
   useEffect(() => {
     const userID = localStorage.getItem("@USERID");
     const token = localStorage.getItem("@TOKEN");
@@ -27,7 +28,9 @@ export const UserProvider = ({ children }) => {
             Authorization: `Bearer ${token}`,
           },
         });
+  
         setUser(data);
+        
         navigate(pathname);
       } catch (error) {
         console.log(error);

@@ -5,6 +5,7 @@ import { Dashboard } from "../pages/Dashboard";
 import { PrivateRoutes } from "./PrivateRoutes";
 import { PublicRoutes } from "./PublicRoutes";
 
+
 export const RoutesMain = () => {
   return (
     <Routes>

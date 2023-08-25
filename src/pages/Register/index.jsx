@@ -101,7 +101,7 @@ export const Register = () => {
                 error={errors.course_module}
                 disabled={loading}
               >
-                <option value="">Selecione um módulo</option>
+                <option>Selecione um módulo</option>
                 <option value="Primeiro Módulo - Introdução ao Frontend">
                   Primeiro Módulo
                 </option>
